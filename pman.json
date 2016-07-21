@@ -1,0 +1,12 @@
+{
+  "name": "codecraft/registry-service",
+  "dependencies": {
+    "codecraft/pman": true,
+    "codecraft/cloud": true
+  },
+  "publish": [
+    "npm install ./",
+    "npm run gen",
+    "sbt publish-local"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "codecraft-registry-model",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "gen": "true && node node_modules/codecraft-codegen/src/main/nodejs/index.js --msgs --services --routes --fsharp_out src/main/fsharp --scala_out src/main/scala proto",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "codecraft-codegen": "file:../codegen",
+    "pman": "file:../pman"
+  }
+}

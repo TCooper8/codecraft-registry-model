@@ -1,0 +1,69 @@
+{
+  "namespace": "codecraft.registry",
+  "messages": {
+    "CmdRoute": {
+      "urlPath": "string",
+      "cmdKey": "string"
+    },
+    "Registry": {
+      "id": "string",
+      "active": "bool",
+      "protocol": "string",
+      "routes": "CmdRoute list",
+      "host": "string",
+      "port": "int"
+    },
+    "PostRegistry": {
+      "active": "bool",
+      "protocol": "string",
+      "routes": "CmdRoute list",
+      "host": "string",
+      "port": "int"
+    },
+    "DeleteRegistry": {
+      "id": "string"
+    },
+    "DeleteRegistryReply": {
+      "code": "int",
+      "status": "string option"
+    },
+    "PostRegistryReply": {
+      "id": "string option",
+      "code": "int",
+      "status": "string option"
+    },
+    "GetRegistries": {
+      "protocol": "string",
+      "cmdKey": "string"
+    },
+    "GetRegistriesReply": {
+      "registries": "Registry list option",
+      "code": "int",
+      "status": "string option"
+    },
+    "RegistryUpdated": {
+      "id": "string",
+      "registry": "Registry",
+      "active": "bool"
+    }
+  },
+  "services": {
+    "IRegistryStore": {
+      "delete": {
+        "request": "DeleteRegistry",
+        "response": "DeleteRegistryReply"
+      },
+      "get": {
+        "request": "GetRegistries",
+        "response": "GetRegistriesReply"
+      },
+      "put": {
+        "request": "PostRegistry",
+        "response": "PostRegistryReply"
+      }
+    }
+  },
+  "events": {
+    "updated": "RegistryUpdated"
+  }
+}
